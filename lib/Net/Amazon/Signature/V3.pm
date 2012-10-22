@@ -43,6 +43,7 @@ sub signed_headers {
     my $auth_string
         = 'AWS3-HTTPS '
         . 'AWSAccessKeyId=' . $self->id . ','
+        . 'Algorithm=HmacSHA1,'
         . 'Signature=' . $signature
         ;
 
@@ -59,6 +60,8 @@ __PACKAGE__->meta->make_immutable;
 !!42;
 __END__
 
+=for stopwords AWS
+
 =head1 SYNOPSIS
 
     # somewhere inside the depths of your code...
@@ -69,7 +72,7 @@ __END__
 
 =head1 DESCRIPTION
 
-Amazon requires authentication when interfacting with its web services; this
+Amazon requires authentication when interfacing with its web services; this
 package implements V3 of Amazon's authentication schemes.
 
 =head1 SEE ALSO
