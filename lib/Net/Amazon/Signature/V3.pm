@@ -81,7 +81,6 @@ package implements V3 of Amazon's authentication schemes.
 
 =head1 SEE ALSO
 
-L<Net::Amazon::Route53> -- signed_headers() is largely based off of the code
-inside L<Net::Amazon::Route53/request>.
+Net::Amazon::Route53
 
 =cut
