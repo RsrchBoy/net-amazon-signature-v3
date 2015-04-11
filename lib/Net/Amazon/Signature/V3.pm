@@ -6,6 +6,8 @@ use utf8;
 
 use Moose;
 use namespace::autoclean;
+use MooseX::AttributeShortcuts 0.015;
+use MooseX::AutoDestruct;
 use MooseX::Types::Common::String ':all';
 
 use HTTP::Date;
@@ -14,6 +16,8 @@ use MIME::Base64;
 
 has $_ => (is => 'ro', isa => NonEmptySimpleStr, required => 1)
     for qw{ id key };
+
+has trust_local_time => (is => 'ro', isa => 'Bool', builder => sub { 0 });
 
 # see route53-dg-20120229.pdf, page 98
 sub _time_string { time2str time }

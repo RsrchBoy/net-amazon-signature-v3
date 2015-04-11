@@ -1,0 +1,83 @@
+# NAME
+
+Net::Amazon::Signature::V3 - Sign AWS requests -- V3
+
+# VERSION
+
+This document describes version 0.002 of Net::Amazon::Signature::V3 - released April 11, 2015 as part of Net-Amazon-Signature-V3.
+
+# SYNOPSIS
+
+    # somewhere inside the depths of your code...
+    my $signer = Net::Amazon::Signature::V3->new(id => $id, key => $key);
+    my $req = HTTP::Request->new('GET', $uri, [ $signer->signed_headers ]);
+
+    # profit!
+
+# DESCRIPTION
+
+Amazon requires authentication when interfacing with its web services; this
+package implements V3 of Amazon's authentication schemes.
+
+# METHODS
+
+## signed\_headers
+
+Returns a list of several key-value pairs suitable for including directly as
+headers.  These headers will authenticate the request to Amazon.
+
+Note that these headers are only good when used within 5 minutes of the time
+that Amazon thinks it is.
+
+This routine is largely based off code extracted from
+["request" in Net::Amazon::Route53](https://metacpan.org/pod/Net::Amazon::Route53#request).
+
+# SEE ALSO
+
+Please see those modules/websites for more information related to this module.
+
+- [[Net::Amazon::Route53](https://metacpan.org/pod/Net::Amazon::Route53) -- signed\_headers() is largely based off of the code](https://metacpan.org/pod/Net::Amazon::Route53&#x20;--&#x20;signed_headers\(\)&#x20;is&#x20;largely&#x20;based&#x20;off&#x20;of&#x20;the&#x20;code)
+- [inside ["request" in Net::Amazon::Route53](https://metacpan.org/pod/Net::Amazon::Route53#request).](https://metacpan.org/pod/inside&#x20;Net::Amazon::Route53/request.)
+
+# SOURCE
+
+The development version is on github at [http://https://github.com/RsrchBoy/net-amazon-signature-v3](http://https://github.com/RsrchBoy/net-amazon-signature-v3)
+and may be cloned from [git://https://github.com/RsrchBoy/net-amazon-signature-v3.git](git://https://github.com/RsrchBoy/net-amazon-signature-v3.git)
+
+# BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/RsrchBoy/net-amazon-signature-v3/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+# AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+## I'm a material boy in a material world
+
+<div>
+    <a href="https://www.gittip.com/RsrchBoy/"><img src="https://raw.githubusercontent.com/gittip/www.gittip.com/master/www/assets/%25version/logo.png" /></a>
+    <a href="http://bit.ly/rsrchboys-wishlist"><img src="http://wps.io/wp-content/uploads/2014/05/amazon_wishlist.resized.png" /></a>
+    <a href="https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fnet-amazon-signature-v3&title=RsrchBoy's%20CPAN%20Net-Amazon-Signature-V3&tags=%22RsrchBoy's%20Net-Amazon-Signature-V3%20in%20the%20CPAN%22"><img src="http://api.flattr.com/button/flattr-badge-large.png" /></a>
+</div>
+
+Please note **I do not expect to be gittip'ed or flattr'ed for this work**,
+rather **it is simply a very pleasant surprise**. I largely create and release
+works like this because I need them or I find it enjoyable; however, don't let
+that stop you if you feel like it ;)
+
+[Flattr this](https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fnet-amazon-signature-v3&title=RsrchBoy&#x27;s%20CPAN%20Net-Amazon-Signature-V3&tags=%22RsrchBoy&#x27;s%20Net-Amazon-Signature-V3%20in%20the%20CPAN%22),
+[gittip me](https://www.gittip.com/RsrchBoy/), or indulge my
+[Amazon Wishlist](http://bit.ly/rsrchboys-wishlist)...  If you so desire.
+
+# COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Chris Weyl.
+
+This is free software, licensed under:
+
+    The GNU Lesser General Public License, Version 2.1, February 1999
