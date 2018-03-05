@@ -8,7 +8,7 @@ Net::Amazon::Signature::V3 - Sign AWS requests -- V3
 
 # VERSION
 
-This document describes version 0.002 of Net::Amazon::Signature::V3 - released March 05, 2018 as part of Net-Amazon-Signature-V3.
+This document describes version 0.003 of Net::Amazon::Signature::V3 - released March 05, 2018 as part of Net-Amazon-Signature-V3.
 
 # SYNOPSIS
 
