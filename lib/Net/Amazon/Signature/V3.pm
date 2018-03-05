@@ -7,7 +7,6 @@ use utf8;
 use Moose;
 use namespace::autoclean;
 use MooseX::AttributeShortcuts 0.015;
-use MooseX::AutoDestruct;
 use MooseX::Types::Common::String ':all';
 
 use HTTP::Date;
