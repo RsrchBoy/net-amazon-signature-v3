@@ -1,6 +1,7 @@
 Revision history for Net-Amazon-Signature-V3
 
 {{$NEXT}}
+	* Re-release 0.002 to include `META.yml`
 
 0.002     2018-03-05 14:51:08 CST-0600
 	* Drop MooseX::AutoDestruct as unused
