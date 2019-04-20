@@ -3,6 +3,8 @@ use warnings;
 
 use Test::More;
 use Test::Moose::More;
+# trigger Moosification so Moose tests work
+use Moo::HandleMoose;
 
 use aliased 'Net::Amazon::Signature::V3';
 
