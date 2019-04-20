@@ -4,10 +4,10 @@ package Net::Amazon::Signature::V3;
 
 use utf8;
 
-use Moose;
+use Moo;
 use namespace::autoclean;
-use MooseX::AttributeShortcuts 0.015;
-use MooseX::Types::Common::String ':all';
+use Types::Standard qw/Bool/;
+use Types::Common::String qw/NonEmptySimpleStr/;
 
 use HTTP::Date;
 use Digest::HMAC_SHA1;
@@ -16,7 +16,7 @@ use MIME::Base64;
 has $_ => (is => 'ro', isa => NonEmptySimpleStr, required => 1)
     for qw{ id key };
 
-has trust_local_time => (is => 'ro', isa => 'Bool', builder => sub { 0 });
+has trust_local_time => (is => 'ro', isa => Bool, default => sub { 0 });
 
 # see route53-dg-20120229.pdf, page 98
 sub _time_string { time2str time }
